@@ -10,12 +10,12 @@ hiddenText = hiddenText.lower()
 shift = int(input("Enter your desired shift: "))
 
 # Function
-def cipher (text, shift, alphabet=string.ascii_lowercase):
+def caesar (text, shift, alphabet=string.ascii_lowercase):
     alphaShift = alphabet[shift:] + alphabet[:shift]
     return text.translate(text.maketrans(alphabet, alphaShift))
 
 # Output
-print (cipher(hiddenText, shift))
+print (caesar(hiddenText, shift))
 
 
 
