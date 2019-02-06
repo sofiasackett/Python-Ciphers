@@ -6,7 +6,7 @@
 import string
 
 # Input
-hiddenText  = input("Enter the text that you would like encrypted: ")
+plaintext = input("Enter the text that you would like encrypted: ")
 
 # Function
 def atbash (text, alphabet = string.ascii_lowercase):
@@ -14,4 +14,4 @@ def atbash (text, alphabet = string.ascii_lowercase):
     return text.translate(text.maketrans(alphabet, atbashAlpha))
 
 # Output
-print (atbash(hiddenText))
+print (atbash(plaintext))
