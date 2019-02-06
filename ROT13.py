@@ -5,8 +5,8 @@
 import string
 
 # Input
-hiddenText = input("Enter the text that you would like encrypted: ")
-hiddenText = hiddenText.lower()
+plaintext = input("Enter the text that you would like encrypted: ")
+plaintext = plaintext.lower()
 
 # Function
 def rot13 (text, alphabet=string.ascii_lowercase):
@@ -14,4 +14,4 @@ def rot13 (text, alphabet=string.ascii_lowercase):
     return text.translate(text.maketrans(alphabet, rot13Alpha))
 
 # Output
-print (rot13(hiddenText))
+print (rot13(plaintext))
