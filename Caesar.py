@@ -5,8 +5,9 @@
 import string
 
 # Input
-hiddenText = input("Enter the text that you would like encrypted: ")
-hiddenText = hiddenText.lower()
+plaintext = input("Enter the text that you would like encrypted: ")
+plaintext = plaintext.lower()
+plaintext = plaintext.replace(" ", "")
 shift = int(input("Enter your desired shift: "))
 
 # Function
@@ -15,7 +16,7 @@ def cipher (text, shift, alphabet=string.ascii_lowercase):
     return text.translate(text.maketrans(alphabet, alphaShift))
 
 # Output
-print (cipher(hiddenText, shift))
+print (cipher(plaintext, shift))
 
 
 
