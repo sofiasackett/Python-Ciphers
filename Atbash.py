@@ -1,17 +1,33 @@
 # Sofia Sackett
 # Atbash Cipher
-# Reversed alphabet
 
-# Import
 import string
 
-# Input
-plaintext = input("Enter the text that you would like encrypted: ")
+def main():
+    question = print("Enter 'e' to encipher or 'd' to decipher.")
+    mode = input("Choose mode: ")
 
-# Function
-def atbash (text, alphabet = string.ascii_lowercase):
-    atbashAlpha = alphabet[::-1]
-    return text.translate(text.maketrans(alphabet, atbashAlpha))
+    alpha = string.ascii_lowercase
+    atbashAlpha = alpha[::-1]
 
-# Output
-print (atbash(plaintext))
+    if mode == 'e' or mode == 'E':
+        hiddenText  = input("Enter the text that you would like enciphered: ")
+
+        def encipher (text, alphabet):
+            return text.translate(text.maketrans(alphabet, atbashAlpha))
+
+        print (encipher(hiddenText, alpha))
+
+
+    elif mode == 'd' or mode == 'D':
+        ciphertext = input("Enter the text that you would like deciphered: ")
+
+        def decipher (text, alphabet):
+            return text.translate(text.maketrans(atbashAlpha, alpha))
+
+        print (decipher(ciphertext, alpha))
+
+    else:
+        print("An error occured. Please enter 'e' to encipher or 'd' to decipher.")
+
+main()
