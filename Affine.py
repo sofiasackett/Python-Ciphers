@@ -2,12 +2,16 @@
 #Affine Cipher
 
 import string
-alphabet = list (map(chr, range(ord('a'), ord('z') + 1)))
+lower = list (map(chr, range(ord('a'), ord('z') + 1)))
+upper = list (map(chr, range(ord('A'), ord('Z') + 1)))
+symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/",
+                  ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
+alphabet = lower + upper + symbols
 
 def main():
     question = print("Enter 'e' to encipher or 'd' to decipher.")
     mode = input("Choose mode: ")
-    m = 26
+    m = int(len(alphabet))
     
     if (mode == 'e' or mode == 'E'):
         varA = int(input("Enter a value for variable a: "))
@@ -34,7 +38,7 @@ def encipher (a, b, m, plaintext):
         p = letter
         p = alphabet.index(letter)
         c = ((a*p) + b) % m
-        cIndex = c % len(alphabet)
+        cIndex = c % m
         cCharacter = alphabet[cIndex]
         ciphertext += cCharacter
     return ciphertext
@@ -50,9 +54,9 @@ def decipher(a, b, m, ciphertext):
     for letter in ciphertext:
         c = letter
         c = alphabet.index(letter)
-        x = find_mod_inverse(a, 26)
+        x = find_mod_inverse(a, m)
         p = x * (c-b) % m
-        pIndex = p % len(alphabet)
+        pIndex = p % m
         pCharacter = alphabet[pIndex]
         plaintext += pCharacter
     return plaintext
