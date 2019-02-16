@@ -27,6 +27,10 @@ def main():
 
     elif mode == 'd' or mode == 'D':
         text = input("Enter the text that you would like deciphered with a '/' after every letter: ")
+        if text[-1] != "/":
+            text += "/"
+        elif text[-1] == "/":
+            pass
         output = decipher(alphabet, text)
         print(output.lower())
 
@@ -37,7 +41,7 @@ def encipher(alphabet, plaintext):
     ciphertext = ""
     for letter in plaintext:
         if letter != " ":
-            ciphertext += alphabet[letter]+" "
+            ciphertext += alphabet[letter] + "/"
         elif letter == " ":
             ciphertext += " "
         else:
@@ -61,3 +65,4 @@ def decipher(alphabet, ciphertext):
                 letters = ''
     return plaintext
 main()
+
