@@ -1,6 +1,6 @@
 # Python Cipher Repository
 
-Welcome to my Python Cipher Repository! This compilation of Python programs showcases my enthusiasm for cryptography, specifically classical ciphers. As a dedicated and curious individual, I embarked on this endeavor to deepen my understanding of encryption techniques and strengthen my Python programming skills.
+Welcome to my Python Cipher Repository! This compilation of Python programs showcases my enthusiasm for cryptography, specifically classical ciphers. As a dedicated and curious individual, I embarked on this endeavor to strengthen my Python programming skills while learning about classical encryption techniques.
 
 ### Table of Contents
 
